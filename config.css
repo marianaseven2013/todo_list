@@ -1,0 +1,24 @@
+
+
+* {
+    margin: 0;
+    padding: o;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: monospace;
+}
+
+:root {
+    --color-rojo: red;
+    --color-verde: green;
+    --color-azul: blue;
+
+    --titulo-h1: 1.6rem;
+    --titulo-h2: 1.8rem;
+    --titulo-h3: 16rem;
+    --parrafo: 14rem;
+    --spam: 12rem;
+}

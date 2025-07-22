@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo-list - En construcción</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(https://images.unsplash.com/photo-1663970206579-c157cba7edda?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHBhcGVyJTIwZm9yJTIwcGN8ZW58MHx8MHx8fDA%3D);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cartel {
+      border: 4px solid #ffffff;
+      border-radius: 20px;
+      padding: 50px 80px;
+      box-shadow: 5px 5px 5px 5px rgb(207, 207, 207);
+      text-align: center;
+      animation: pulse 2s infinite;
+      background-color: rgba(0, 0, 0, 0.5); /* semitransparente para legibilidad */
+    }
+
+    .cartel h1 {
+      font-size: 3.5em;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .cartel p {
+      font-size: 2em;
+      color: #ffffff;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cartel">
+    <h1>Todo-list</h1>
+    <p>🚧 Estamos trabajando 🚧</p>
+  </div>
+</body>
+</html>
