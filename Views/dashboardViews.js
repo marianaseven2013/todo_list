@@ -1,11 +1,13 @@
-/* alert("Hola Mundo"); */
+/* alert("Hola Mundo"); */ 
+import { header } from "../components/header/headerComponent.js";
+
 export function dashboard(){
     let seccion = document.createElement('section');
 
-
-    let h1 = document.createElement('h1');
+    seccion.appendChild(header());
+   /*  let h1 = document.createElement('h1');
     h1.innerText = "hola mundo"
-    seccion.appendChild(h1);
+    seccion.appendChild(h1); */
 
 
     return seccion;
