@@ -12,7 +12,7 @@ export function header(){
     divtareas.innerText = "Pendientes"
     let divtareash = document.createElement('div');
     divtareash.className = "HijoDt";
-    divtareash.innerText = "8"
+    divtareash.innerText = "10"
     divtareas.appendChild(divtareash);
 
 /*     divtareas.innerText = "Holaa!";

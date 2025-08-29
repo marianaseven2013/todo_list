@@ -10,6 +10,7 @@
     margin-bottom: 20px;
 }
 
+
 .btn-tarea {
     background-color: #a8d0ff;
     color: black;
@@ -20,6 +21,7 @@
     cursor: pointer;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
 
 .btn-archivado {
     background-color: #e4e4e4;

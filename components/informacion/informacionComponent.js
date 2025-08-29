@@ -1,4 +1,3 @@
-import { crearFormulario } from "../formulario/formularioComponente.js";
 export function informacion(data) {
     let divInfo = document.createElement('div');
     divInfo.className = "div-info";
@@ -8,7 +7,6 @@ export function informacion(data) {
 
     let btnTarea = document.createElement('button');
     btnTarea.className = "btn-tarea";
-
     btnTarea.innerText = "+ tarea";
 
     let btnArchivado = document.createElement('button');
@@ -24,15 +22,15 @@ export function informacion(data) {
 
     let circuloEstado = document.createElement('div');
     circuloEstado.className = "circulo-estado";
-    circuloEstado.innerText = data.estado_tarea || "Estado";
+    circuloEstado.innerText = data?.estado_tarea || "Estado";
     tarjeta.appendChild(circuloEstado);
 
     let titulo = document.createElement('h3');
-    titulo.innerText = data.titulo || "Título no disponible";
+    titulo.innerText = data?.titulo || data?.nombre || "Título no disponible";
     tarjeta.appendChild(titulo);
 
     let descripcion = document.createElement('p');
-    descripcion.innerText = data.descripcion || "Sin descripción.";
+    descripcion.innerText = data?.descripcion || "Sin descripción.";
     tarjeta.appendChild(descripcion);
 
     let textoIntegrantes = document.createElement('p');
@@ -42,7 +40,7 @@ export function informacion(data) {
     let divEmojis = document.createElement('div');
     divEmojis.className = "div-emojis";
 
-    (data.integrantes || []).forEach(e => {
+    (data?.integrantes || []).forEach(e => {
         let span = document.createElement('span');
         span.className = "emoji";
         span.innerText = e;
@@ -52,12 +50,27 @@ export function informacion(data) {
     tarjeta.appendChild(divEmojis);
     divInfo.appendChild(tarjeta);
 
-       btnTarea.addEventListener('click', () => {
+    // Botón para crear tarea
+    btnTarea.addEventListener('click', () => {
         crearFormulario((tarea) => {
             console.log(tarea);
             // Aquí podrías después agregarla visualmente
         });
     });
+
+    // Función para actualizar la información
+    divInfo.actualizarInfo = function(nuevaData) {
+        circuloEstado.innerText = nuevaData.estado_tarea || "Estado";
+        titulo.innerText = nuevaData.titulo || nuevaData.nombre || "Título no disponible";
+        descripcion.innerText = nuevaData.descripcion || "Sin descripción.";
+        divEmojis.innerHTML = "";
+        (nuevaData.integrantes || []).forEach(e => {
+            let span = document.createElement('span');
+            span.className = "emoji";
+            span.innerText = e;
+            divEmojis.appendChild(span);
+        });
+    }
 
     return divInfo;
 }

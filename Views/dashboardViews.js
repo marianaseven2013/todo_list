@@ -3,14 +3,10 @@ import { tareas } from "../components/tareas/tareasComponent.js";
 import { informacion } from "../components/informacion/informacionComponent.js";
 import { footer } from "../components/footer/footerComponent.js";
 
-
 export async function dashboard() {
     try {
         const resultado = await fetch("http://localhost:3000/tareas");
-        const datos = await resultado.json();
-        let tareasDb = datos;
-
-
+        const tareasDb = await resultado.json();
 
         let dashboard = document.createElement('section');
         dashboard.className = "dashboard";
@@ -20,25 +16,26 @@ export async function dashboard() {
 
         let seccion1 = document.createElement('section');
         seccion1.className = "seccion-1";
-        seccion1.appendChild(tareas(tareasDb));
+
+        const divTareas = tareas(tareasDb);
+        const divInfo = informacion(tareasDb[0]); 
+
+        divTareas.addEventListener('mostrarInfo', (e) => {
+            divInfo.actualizarInfo(e.detail);
+        });
+
+        seccion1.appendChild(divTareas);
+        seccion1.appendChild(divInfo);
         dashboard.appendChild(seccion1);
 
-        seccion1.appendChild(informacion(tareasDb[0]
- 
-    ));
- 
+        dashboard.appendChild(footer());
 
-    dashboard.appendChild(footer());
-
-    return dashboard;
+        return dashboard;
     } catch (error) {
         console.error("Error: ", error);
     }
 }
 
-
-
 dashboard().then(elemento => {
-document.body.appendChild(elemento);
-
+    document.body.appendChild(elemento);
 });
