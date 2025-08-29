@@ -3,14 +3,17 @@ header {
     grid-template-columns: 1fr 20rem auto;
     align-items: center;
     gap: 1rem;
+    color: white;
+    padding-left: 2rem;
     font-size: 1.2rem;
     border-bottom: 3px solid black;
+    background-image: url(https://i.pinimg.com/1200x/93/d6/21/93d62190d30b1e790b439e8df1148c37.jpg);
+
 }
 
 .div-tareas{
     max-width: 30rem;
     height: 100%;
-
     display: grid;
     grid-template-columns: 13rem auto;
     grid-template-rows: 1fr;
@@ -19,17 +22,21 @@ header {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font: bold;
     font-size: 2rem;
+    color: white;
+
 }
+
 
 .div-logo-usuario{
     width: 4rem;
     height: 4rem;
     border-radius: 100%;
-    border: 1px solid rgb(182, 182, 182);
+    border: 1px solid rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; 
+
 }
 
 .iconol{
@@ -45,4 +52,20 @@ header {
     height: 3rem;
     width: 3rem;
     text-align: center;
+    
+}
+
+@media (max-width: 700px) {
+
+
+    header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;   
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 3px solid black;
+    }
+
+  
 }

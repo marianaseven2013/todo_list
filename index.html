@@ -14,24 +14,35 @@
     html, body {
       height: 100%;
       width: 100%;
-      background: linear-gradient(to right, #fdfbfb, #ebedee);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url(https://images.unsplash.com/photo-1663970206579-c157cba7edda?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHBhcGVyJTIwZm9yJTIwcGN8ZW58MHx8MHx8fDA%3D);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url(https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-c854-620a-9a8c-1a9c0a2ca4e9/raw?se=2025-08-29T01%3A17%3A47Z&sp=r&sv=2024-08-04&sr=b&scid=b4d514d8-9f44-57fb-8dba-9ff4f17b91b3&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-28T20%3A34%3A46Z&ske=2025-08-29T20%3A34%3A46Z&sks=b&skv=2024-08-04&sig=zKPYMfTUgfr6Xlh0fw4PA2XHIqMBCSf8YEZ/O/t6kE0%3D);
       background-size: cover;
       background-position: center;
+      filter: brightness(40%); /* Más oscuro */
+      z-index: -1;
     }
 
     .cartel {
       border: 4px solid #ffffff;
       border-radius: 20px;
       padding: 50px 80px;
-      box-shadow: 5px 5px 5px 5px rgb(207, 207, 207);
       text-align: center;
       animation: pulse 2s infinite;
-      background-color: rgba(0, 0, 0, 0.5); /* semitransparente para legibilidad */
+      background-color: rgba(8, 8, 8, 0.5);
     }
 
     .cartel h1 {
@@ -40,9 +51,24 @@
       margin-bottom: 20px;
     }
 
-    .cartel p {
-      font-size: 2em;
-      color: #ffffff;
+    .cartel form input[type="email"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+
+    .cartel form button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #bad1ac;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     @keyframes pulse {
@@ -64,7 +90,12 @@
 <body>
   <div class="cartel">
     <h1>Todo-list</h1>
-    <p>🚧 Estamos trabajando 🚧</p>
+
+    <form>
+      <input type="email" placeholder="Introduce tu correo" required />
+      <br />
+      <button type="submit">Ingresar</button>
+    </form>
   </div>
 </body>
 </html>

@@ -2,18 +2,20 @@ footer.footer {
     padding: 1em;
     text-align: center;
     font-family: sans-serif;
+    background-image: url(https://i.pinimg.com/1200x/93/d6/21/93d62190d30b1e790b439e8df1148c37.jpg);
+
 }
 
 .footer-line {
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     margin-bottom: 0.8em;
 }
 
 .footer-link {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 1em;
     max-width: 5rem;
     font-size: 1.4rem;

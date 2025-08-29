@@ -1,4 +1,10 @@
-export function crearTarea(indice, titulo, estado, fechaAs, fechaEn, listaIntegrantes, estiloEstado = "") {
+export function crearTarea(indice, 
+    titulo,
+    estado,
+    fechaAs, 
+    fechaEn,
+    listaIntegrantes, 
+    estiloEstado =[]) {
     let div = document.createElement('div');
     div.classList = "tarea";
 

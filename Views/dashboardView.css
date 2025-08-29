@@ -9,3 +9,18 @@
     display: grid;
     grid-template-columns: 75% 25%;
 }
+
+@media (max-width: 700px) {
+    .seccion-1{
+        grid-template-columns: auto;
+    }
+}
+  
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+}

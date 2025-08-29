@@ -4,17 +4,19 @@ export function tareas(tareasDb) {
     let divTareasSec = document.createElement('div');
     divTareasSec.className = "div-tareas-sec1";
 
-   tareasDb.forEach((e, i) => {
+   tareasDb.forEach((e) => {
     divTareasSec.appendChild(
         crearTarea(
-            i, 
-            e.titulo,
-            e.estado,
-            e.fechaAs,
-            e.fechaEn,
-            e.integrantes,
-            e.claseEstado
+            1, 
+            e.nombre,
+            e.estado_tarea,
+            e.fecha_asignada,
+            e.fecha_entrega,
+           /*  e.integrantes,
+            e.claseEstado */
+        []
         )
+        
     );
 });
 
