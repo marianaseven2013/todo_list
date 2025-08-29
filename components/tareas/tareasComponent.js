@@ -11,10 +11,9 @@ export function tareas(tareasDb) {
             e.estado_tarea,
             e.fecha_asignada,
             e.fecha_entrega,
-            [] // Puedes agregar aquí más datos si lo deseas
+            []
         );
 
-        // Al hacer click en la tarea, emitimos un evento personalizado con sus datos
         tareaElemento.addEventListener('click', () => {
             const evento = new CustomEvent('mostrarInfo', {
                 detail: e

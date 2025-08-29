@@ -50,15 +50,49 @@ export function informacion(data) {
     tarjeta.appendChild(divEmojis);
     divInfo.appendChild(tarjeta);
 
-    // Botón para crear tarea
     btnTarea.addEventListener('click', () => {
-        crearFormulario((tarea) => {
-            console.log(tarea);
-            // Aquí podrías después agregarla visualmente
+        if (divInfo.querySelector('.form-tarea')) return;
+
+        const form = document.createElement('form');
+        form.className = 'form-tarea';
+
+        const inputTitulo = document.createElement('input');
+        inputTitulo.type = 'text';
+        inputTitulo.placeholder = 'Título de la tarea';
+        inputTitulo.required = true;
+
+        const inputDescripcion = document.createElement('textarea');
+        inputDescripcion.placeholder = 'Descripción';
+        inputDescripcion.required = true;
+
+        const btnAgregar = document.createElement('button');
+        btnAgregar.type = 'submit';
+        btnAgregar.innerText = 'Agregar tarea';
+
+        form.appendChild(inputTitulo);
+        form.appendChild(inputDescripcion);
+        form.appendChild(btnAgregar);
+
+        divInfo.insertBefore(form, tarjeta);
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nuevaTarea = {
+                titulo: inputTitulo.value,
+                descripcion: inputDescripcion.value,
+                estado_tarea: 'Pendiente',
+                integrantes: [],
+            };
+
+            console.log('Nueva tarea:', nuevaTarea);
+
+            divInfo.actualizarInfo(nuevaTarea);
+
+            form.remove();
         });
     });
 
-    // Función para actualizar la información
     divInfo.actualizarInfo = function(nuevaData) {
         circuloEstado.innerText = nuevaData.estado_tarea || "Estado";
         titulo.innerText = nuevaData.titulo || nuevaData.nombre || "Título no disponible";
