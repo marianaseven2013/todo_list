@@ -91,11 +91,18 @@
   <div class="cartel">
     <h1>Todo-list</h1>
 
-    <form>
+    <form id="loginForm">
       <input type="email" placeholder="Introduce tu correo" required />
       <br />
       <button type="submit">Ingresar</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // evita recarga
+      window.location.href = "./pages/dashboard.html"; // redirige al dashboard
+    });
+  </script>
 </body>
 </html>

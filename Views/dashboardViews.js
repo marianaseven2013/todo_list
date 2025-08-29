@@ -5,7 +5,7 @@ import { footer } from "../components/footer/footerComponent.js";
 
 export async function dashboard() {
     try {
-        const resultado = await fetch("http://localhost:3000/tareas");
+        const resultado = await fetch("https://backend-todo-genesis-xxwd.onrender.com/tareas");
         const tareasDb = await resultado.json();
 
         let dashboard = document.createElement('section');
