@@ -104,12 +104,13 @@
     padding: 15px 20px;
     border-bottom: 1px solid #ddd;
     
-    background-image: 
+   /*  background-image: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
         url(https://i.pinimg.com/1200x/9f/8f/f0/9f8ff07be7f85226ccb2826c36f0b06c.jpg);
     background-blend-mode: darken;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: black;
 
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
